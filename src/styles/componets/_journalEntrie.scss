@@ -1,0 +1,26 @@
+/** @format */
+
+.journal-entrie {
+  background: white;
+  width: 95%;
+  margin: 1rem;
+  padding: 0.5rem;
+  @include flex(center, center, row);
+  border-radius: 0.5rem;
+
+  .content {
+    flex: 1 1 25rem;
+    padding: 0.5rem;
+
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+  .image-entrie {
+    flex: 1 1 25rem;
+
+    img {
+      width: 100%;
+    }
+  }
+}

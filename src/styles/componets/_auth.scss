@@ -1,0 +1,7 @@
+/** @format */
+
+.auth__main {
+  background: $primary;
+  min-height: 100vh;
+  @include flex(center, center, row);
+}

@@ -1,0 +1,16 @@
+/** @format */
+@import "base/global";
+@import "componets/auth";
+@import "componets/form";
+@import "componets/journal";
+@import "componets/sidebar";
+@import "componets/journalEntries";
+@import "componets/journalEntrie";
+@import "componets/nothinToShow";
+@import "componets/notes";
+@import "componets/noteContent";
+@media only screen and (max-width: 430px) {
+  html {
+    font-size: 70%;
+  }
+}

@@ -1,0 +1,15 @@
+/** @format */
+
+.nothing-container {
+  min-height: 100vh;
+  margin: 0;
+  @include flex(center, center, column);
+
+  p {
+    font-size: 2rem;
+    color: white;
+  }
+  i {
+    color: white;
+  }
+}

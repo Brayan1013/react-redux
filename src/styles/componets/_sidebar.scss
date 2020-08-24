@@ -1,0 +1,37 @@
+/** @format */
+
+.sidebar-head {
+  min-height: 10vh;
+  @include flex(center, center, row);
+  margin: 0.5rem;
+
+  p {
+    flex: 5 1 20rem;
+    text-align: center;
+    font-size: 1.5rem;
+    color: white;
+  }
+
+  .logout-button {
+    flex: 1 1 20rem;
+    text-align: center;
+
+    button {
+      cursor: pointer;
+      width: 50%;
+      border: none;
+      color: white;
+      background: $primary;
+    }
+  }
+}
+
+.history {
+  min-height: 20vh;
+  @include flex(center, center, column);
+
+  .fa-calendar-alt {
+    color: white;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,17 @@
+/** @format */
+
+.container {
+  @include flex(center, center, row);
+  background: $primary;
+}
+
+.sidebar {
+  flex: 1 1 25rem;
+  min-height: 100vh;
+  background: $dark-grey;
+}
+
+.main-container {
+  flex: 3 1 25rem;
+  min-height: 100vh;
+}

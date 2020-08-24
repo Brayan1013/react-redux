@@ -1,0 +1,21 @@
+/** @format */
+
+$primary: #5c62c5;
+$dark-grey: #363636;
+$light-grey: #d8d8d8;
+$title-size: 2.5rem;
+$text-size-button: 1.2rem;
+
+@mixin flex($justify-content, $align-items, $flex-direction) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-direction: $flex-direction;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
