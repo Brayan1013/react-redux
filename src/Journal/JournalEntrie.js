@@ -1,26 +1,30 @@
 /** @format */
 
 import React from "react";
+import moment from "moment";
+import { useDispatch } from "react-redux";
+import { noteActive } from "../actions/notes";
 
-export const JournalEntrie = () => {
+export const JournalEntrie = ({ id, date, body, title, url }) => {
+  const actualDate = moment(date);
+  const dispatch = useDispatch();
+  const handleNoteSelected = () => {
+    dispatch(noteActive(id, { date, body, title, url }));
+  };
   return (
     <>
-      <div className="journal-entrie">
-        <div className="image-entrie">
-          <img
-            src="https://www.latercera.com/resizer/KgX1vgKzzLkJCYWG5yRU2ovG3lY=/900x600/smart/arc-anglerfish-arc2-prod-copesa.s3.amazonaws.com/public/5RKSMEMEXJEPTMSLL77RJDACMM.jpg"
-            alt="Mario"
-          />
-        </div>
+      <div onClick={handleNoteSelected} className="journal-entrie">
+        {url && (
+          <div className="image-entrie">
+            <img src={url} alt="Mario" />
+          </div>
+        )}
         <div className="content">
-          <h1>Un mundo ideal</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis,
-            necessitatibus?
-          </p>
-          <span>
-            <b>12/12/2015</b>
-          </span>
+          <h1>{title}</h1>
+          <p>{body}</p>
+          <span>{`${actualDate.format("dddd")}/${actualDate.format(
+            "M"
+          )}/${actualDate.format("YYYY")}`}</span>
         </div>
       </div>
     </>

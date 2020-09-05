@@ -5,6 +5,10 @@ const { useState } = require("react");
 export const useForm = (initialState = {}) => {
   const [values, setValues] = useState(initialState);
 
+  const updateState = () => {
+    setValues(initialState);
+  };
+
   const handleChanges = (e) => {
     setValues({
       ...values,
@@ -12,5 +16,5 @@ export const useForm = (initialState = {}) => {
     });
   };
 
-  return [values, handleChanges];
+  return [values, handleChanges, updateState];
 };

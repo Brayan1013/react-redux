@@ -4,9 +4,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "../hooks/useForm";
 import { loginwithEmailAndPassword, signInWithGoogle } from "../actions/auth";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export const LoginScreen = () => {
+  const { loading } = useSelector((state) => state.ui);
   const [values, handleChanges] = useForm({
     email: "brayan@gmail.com",
     password: "123456",
@@ -44,7 +45,9 @@ export const LoginScreen = () => {
             name="password"
             id="password"
           />
-          <button type="submit">Login</button>
+          <button disabled={loading} type="submit">
+            {loading ? "Cargando" : "Login"}
+          </button>
         </form>
         <button onClick={handleSignInWithGoogle} className="google">
           <i className="fab fa-google"></i> Google
